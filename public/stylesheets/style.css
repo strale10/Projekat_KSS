@@ -1,0 +1,118 @@
+html, body{
+    height:100%!important;
+    margin:0!important;
+}
+body{
+    display:flex;
+    flex-direction:column;
+}
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+
+}
+.nav-link{
+    font-size: 1.5em;
+    color:#12275a !important;
+    transition: 0.4s;
+}
+.nav-link:hover{
+    font-size: 1.5em;
+    text-decoration: underline;
+    transition: 0.4s;
+    font-weight: bold;
+    color: #12275a !important;
+}
+.navbar-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+    color:red !important;
+    margin:0px;
+}
+
+/*animacija*/
+
+@-webkit-keyframes uparrow {
+    0% {
+        -webkit-transform: translateY(0);
+        opacity: 0.4
+    }
+    100% {
+        -webkit-transform: translateY(-0.4em);
+        opacity: 0.9
+    }
+}
+
+.up {
+    -webkit-animation: uparrow 0.6s infinite alternate ease-in-out;
+}
+
+/*animacija*/
+
+.pocetnatext{
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color:#12275a;
+
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    margin-top:auto;
+    background-color: #12275a;
+    color: white;
+}
+.sadrzaj{
+    margin-top: 70px;
+}
+
+.active{
+    color:red!important;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+.okvir{
+    padding: 40px;
+    margin:0 auto;
+    width: 80%;
+    height: 80%;
+    border: 1px solid #12275a;
+    border-radius: 15px;
+}
+
+.dugme{
+    width: 200px;
+}
+
+.unospolja{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 3%;
+    font-weight: bold;
+    border: 1px solid #12275a;
+    border-radius: 8px;
+    background: whitesmoke;
+}
+ .opis{
+     color: #12275a;
+     font-size: 22px;
+     font-weight: bold;
+ }
+ .odvoji{
+     margin-top:10%!important;
+ }

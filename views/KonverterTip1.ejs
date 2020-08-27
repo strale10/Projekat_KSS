@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/">KONVERTOR</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/valute">Valuta EURO u RSD <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                &nbsp;|&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/duzina">Jedinica KM u CM <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                &nbsp;|&nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/snaga">Jedinica KW u KS <span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+        <a class="navbar-brand" href="#" style="visibility: hidden;">KONVERTOR</a>
+    </div>
+</nav>
+<div class="container">
+    <form method="post">
+        <div class="okvir my-5">
+            <div class="row justify-content-center my-3">
+                <p class="opis">Unesite vrednost u <span style="color:red;">EURO</span>:</p>
+            </div>
+            <div class="row justify-content-center my-3">
+                <input type="text" id="uneta" name="uneta" value="<%=uneta%>" class="unospolja">
+            </div>
+            <div class="row justify-content-center my-3">
+                <p class="opis">Dobijena vrednost u <span style="color:red;">RSD</span>:</p>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <input type="text" id="dobijena" name="dobijena" class="unospolja" value="<%=dobijena%>" readonly>
+            </div>
+            <div class="row justify-content-center my-4">
+                <button type="submit" formaction="/valute" class="btn btn-primary dugme">Izračunaj</button>
+                <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1 mb-4"></div>
+                <button type="submit" formaction="/valuteunos" class="btn btn-primary dugme">Izračunaj i sačuvaj</button>
+            </div>
+            <div class="row justify-content-center my-5">
+                <a href="/valuteobrnuti" ><button type="button" class="btn btn-primary dugme">Obrnuta konverzija</button></a>
+            </div>
+            <div class="row justify-content-center my-5">
+                <a href="/" ><button type="button" class="btn btn-primary dugme">Početna strana</button></a>
+            </div>
+        </div>
+    </form>
+    <div class="row justify-content-center my-5 col-12" style="margin: 0 auto!important;">
+
+            <table class="table table-primary">
+                <thead>
+                <tr>
+                    <th scope="col">Vrednost u EURO</th>
+                    <th scope="col">Vrednost u RSD</th>
+                    <th scope="col" style="text-align: center">Akcija</th>
+                </tr>
+                </thead>
+                <% data.forEach(function(x) { %>
+                <tbody>
+
+                    <td><%=x.uneta_vrednost%> Euro</td>
+                    <td><%=x.dobijena_vrednost%> RSD</td>
+                    <td style="text-align: center"><a href="/obrsivalutu/<%=x.id_valute%>" ><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+                </tbody>
+                <% }) %>
+            </table>
+
+    </div>
+</div>
+
+<footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#"> Strahinja Milošević </a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+</html>
